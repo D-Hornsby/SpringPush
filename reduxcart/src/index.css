@@ -1,0 +1,474 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+ /* for now only nav bar color
+ this set up is custome properties so you can just 
+ call these colors by the custome property name 
+ do this by writing var and the color property 
+ it will look like   color:var(--clr-primary);
+  */
+:root {
+  --clr-primary:rgb(159, 155, 155);
+  --clr-primary-dark: hsl(205, 100%, 21%);
+  --clr-primary-light: hsl(205, 84%, 74%);
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+  --clr-grey-10: #f1f5f8;
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --ff-primary: "Catamaran", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --large-screen-width: 1170px;
+  --small-screen-width: 90vw;
+  --fixed-width: 50rem;
+} 
+
+.login{
+  
+  /* border: 5px solid rgb(14, 141, 25); */
+  /* background-color: black; */
+  /* color:whitesmoke; */
+  display: flex;
+  flex-direction:column;
+  position: relative;
+  width:auto;
+  height:100vh; 
+  text-align:bottom ;
+    
+}
+
+.logForm{
+  position: absolute;
+  bottom:100px;
+  padding-left: 40px;
+
+}
+
+.register{
+  /* border: solid red; */
+  display: flex;
+  flex-direction:column;
+  position: relative;
+  width:auto;
+  height:100vh; 
+  text-align:bottom;  
+
+}
+
+/* entire form section */
+.registerForm{
+  position: absolute;
+  bottom:100px;
+  padding-left: 40px;
+
+}
+/* This is my overlay for the regrestration page */
+.register .content {
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+
+}
+
+.login .content {
+  
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+}
+
+/* submit buttons */
+input[type=submit] {
+  padding:5px 15px; 
+  background:#ccc; 
+  border:0 none;
+  border-radius: 5px; 
+  
+}
+/* input[type=submit]:hover {
+  box-shadow: 0 12px 16px 0 rgba(244, 240, 240, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+} */
+
+/* input submit button  */
+input[type=submit]:active {
+  background-color: #8f8f91;
+  box-shadow: 0 5px rgb(14, 13, 13);
+  transform: translateY(3px);
+  
+}
+
+input[type=submit]:hover{
+  background-color: rgb(133, 130, 130);
+}
+
+
+/* input boxes for log in and reg */
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+
+.bgimg{
+/* border: 20px solid turquoise; */
+height: 100%;
+width: 100%;
+position: absolute;
+
+z-index: -1;
+/* object-fit:fill; */
+
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  /* border: 3px solid red; */
+
+}  
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+ body {
+  font-family: var(--ff-primary);
+  /* background: var(rgb(95, 60, 60)); */
+  /* border: 10px solid rgb(209, 8, 8);  */
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  width: 100vw;
+  height: 100vh;
+} 
+ 
+/* this is for my link ie: to register and login */
+a {
+  color: rgb(160, 150, 248);
+  padding: 10%;
+  /* text-decoration: none; */
+
+} 
+a:hover {
+  color: hotpink;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+} 
+
+/* title in nav bar */
+ h1 {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  color:rgb(211, 210, 208);
+  padding:10px;
+  
+}
+
+/* for your bag title */
+h2 {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+h3 {
+  /* font-size: 1.5rem; */
+  font-family: 'Poppins', sans-serif;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/* more global css */
+ 
+.btn {
+  text-transform: uppercase;
+                                background: var(--clr-primary);
+                                color: var(--clr-white);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+                              color: var(--clr-primary);
+                              background: var(--clr-primary-light);
+} 
+
+/*
+=============== 
+Navbar
+===============
+*/
+
+/* pulls it off the edge of the page */
+ nav {
+  background: rgb(36, 36, 37); 
+  padding: 1.25rem 2rem;
+} 
+/* controles crazy purse */
+ .nav-center {
+  max-width: var(--fixed-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 20px solid blueviolet; */
+} 
+/* this is for the user name in nav bar when logged in */
+.User{
+  position: relative;
+  color: #e9ebe1;
+  
+  margin-right: 4rem;
+  font-family: 'Poppins', sans-serif;
+  z-index:-1;
+  /* border: ; */
+}
+
+input{
+  color: #102a42;
+}
+
+/* title in header white */
+nav h3 {
+  margin-bottom: 0;
+  color: var(--clr-white);
+} 
+
+/* puts circle counter on icon########## */
+.nav-container {
+  display: block;
+  position: relative;
+} 
+
+nav svg {
+  width: 2rem;
+  fill: var(--clr-white);
+}
+
+.amount-container {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--clr-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+/* button num of items color an stuff */
+.total-amount {
+  color: var(--clr-white);
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+/*
+=============== 
+Cart
+===============
+*/
+/* aligns cart nicely . shows no border?*/
+.cart {
+  min-height: calc(100vh - 80px);
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  max-width: var(--fixed-width);
+}
+/* cart title upper case and center */
+.cart h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.empty-cart {
+  text-transform: lowercase;
+  color: var(--clr-grey-5);
+  margin-top: 1rem;
+  text-align: center;
+} 
+
+.cart footer {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* shifts total and $00 in place */
+ .cart-total h4 {
+  /* text-transform: capitalize; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+} 
+.clear-btn {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: var(--clr-red-dark);
+  border: 1px solid var(--clr-red-dark);
+  margin-top: 2.25rem;
+}
+.clear-btn:hover {
+  background: var(--clr-red-light);
+  color: var(--clr-red-dark);
+  border-color: var(--clr-red-light);
+} 
+
+/*
+=============== 
+Cart Item
+===============
+alligns cart to the left displays better
+*/
+ .cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+} 
+
+/* carth item image and sizing */
+.cart-item img {
+  width: 15rem;
+  height: 13rem;
+  border-radius: .5em;
+  box-shadow: 2px 2px 4px 4px  rgb(36, 36, 37, 0.5);
+  padding: 5px;
+
+  object-fit: cover;
+}
+
+.cart-item h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+} 
+ 
+.item-price {
+  color: var(--clr-grey-5);
+} 
+
+/* remove button for each product */
+ .remove-btn {
+  color: var(--clr-primary);
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+  font-size: 0.85rem;
+  background: transparent;
+  border: none;
+  margin-top: 0.375rem;
+  transition: var(--transition);
+}
+.remove-btn:hover {
+  color: var(--clr-primary-light);
+}
+.amount-btn {
+  width: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.amount-btn svg {
+  fill: var(--clr-primary);
+}
+.amount-btn:hover svg {
+  fill: var(--clr-primary-light);
+}
+.amount {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+} 
+
+/* b */
+hr {
+  background: var(--clr-grey-5);
+  border-color: transparent;
+  border-width: 0.25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
